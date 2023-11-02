@@ -11,6 +11,7 @@
 #include "stdint.h"
 #include "debug.h"
 
+
 #define GLCD_SID_Pin        GPIO_Pin_2
 #define GLCD_SID_GPIO_Port  GPIOA
 
@@ -61,43 +62,28 @@ void ST7920_Init (void);
 
 // Set a pixel on the display
 void SetPixel(uint8_t x, uint8_t y);
-
-// draw line from (X0, Y0) to (X1, Y1)
 void DrawLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
-
-// draw rectangle from (X,Y) w- width, h- height
+/* Draw rectangle
+ * start point (x,y)
+ * w -> width
+ * h -> height
+ */
 void DrawRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
-
-// draw filled rectangle
+/* Draw filled rectangle
+ * Start point (x,y)
+ * w -> width
+ * h -> height
+ */
 void DrawFilledRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
-
-// draw circle with centre (X0, Y0) and radius= radius
+/* draw circle
+ * centre (x0,y0)
+ * radius = radius
+ */
 void DrawCircle(uint8_t x0, uint8_t y0, uint8_t radius);
-
-// Draw Filled Circle with centre (X0, Y0) and radius= r
-
+// Draw Filled Circle
 void DrawFilledCircle(int16_t x0, int16_t y0, int16_t r);
-
 // Draw Traingle with coordimates (x1, y1), (x2, y2), (x3, y3)
 void DrawTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3);
-
 // Draw Filled Traingle with coordimates (x1, y1), (x2, y2), (x3, y3)
 void DrawFilledTriangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3);
-
-//Other
-void GLCD_Buf_Clear(void);
-void GLCD_Font_Print(uint8_t x,uint8_t y,char * String);
-void ClearPixel(uint8_t x, uint8_t y);
-void TogglePixel(uint8_t x, uint8_t y);
-void ClearLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
-void ToggleLine(uint8_t x0, uint8_t y0, uint8_t x1, uint8_t y1);
-void ToggleRectangle(uint16_t x, uint16_t y, uint16_t w, uint16_t h);
-void ClearPixel(uint8_t x, uint8_t y);
-void ClearFilledCircle(int16_t x0, int16_t y0, int16_t r);
-void GLCD_ICON_Print(uint8_t x,uint8_t y,const uint8_t * ICON);
-
-//Debug
-void GLCD_Test(void);
-
-
 #endif /* PERIPHERAL_INC_ST7290_H_ */
